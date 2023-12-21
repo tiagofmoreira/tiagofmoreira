@@ -1,0 +1,48 @@
+using System;
+class revisao
+{
+    static void ImprimeMenu()
+    {
+        Console.WriteLine("1 - Área do círculo");
+        Console.WriteLine("2 - Maior temperatura e dia da semana");
+        Console.WriteLine("3 - Lata de tinta");
+        Console.WriteLine("4 - Sorteio");
+        Console.WriteLine("5 - Sair");
+       
+    }
+    static string SortearNumero()
+    {
+        string[] nomes = { "Smzinho", "Gaules", "Felps", "Alanzoka" };
+        Random gerador = new Random();
+        int numero = gerador.Next(0,4);
+        return nomes [numero];
+    }
+    static void Main(string[] args)
+    {
+        while (true)
+        {
+            ImprimeMenu();
+            Console.Write("Digite uma opção: ");
+            byte opcaoEscolhida = Convert.ToByte(Console.ReadLine());
+            switch (opcaoEscolhida)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    Console.WriteLine(SortearNumero());
+                    break;
+                case 5:
+                    goto FimDoPrograma;
+                    default:
+                Console.WriteLine("Opção Inválida");
+                    break;
+
+            }
+        }
+        FimDoPrograma:;
+    }
+}

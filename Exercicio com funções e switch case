@@ -1,0 +1,67 @@
+using System;
+
+class Exercicio
+{
+    static void Main(string[] args)
+    {
+        int opcao;
+        do
+        {
+            Console.WriteLine("            Opções:");
+            Console.WriteLine("1 - Calcular a idade de uma pessoa");
+            Console.WriteLine("2 - Quantos dias faltam para o natal?");
+            Console.WriteLine("3 - Sair do programa");
+            Console.Write("Digite sua opção: ");
+
+            opcao = Convert.ToInt32(Console.ReadLine());
+
+            switch (opcao)
+            {
+                case 1:
+                    CalcularIdade();
+                    Console.Write("Digite o ano de nascimento: ");
+                    int anoNascimento = int.Parse(Console.ReadLine());
+
+                    int idade = DateTime.Now.Year - anoNascimento;
+
+                    Console.WriteLine("Idade: " + idade + " anos");
+                    break;
+
+                case 2:
+                    CalcularDiasParaNatal();
+                    DateTime natal = new DateTime(DateTime.Now.Year, 12, 25);
+                    TimeSpan diasParaNatal = natal - DateTime.Now;
+
+                    Console.WriteLine("Faltam " + diasParaNatal.Days + " dias para o Natal!");
+                    break;
+
+                case 3:
+                    break;
+
+                default:
+                    Console.WriteLine("Opção inválida");
+                    break;
+            }
+
+            Console.WriteLine();
+        } while (opcao != 3);
+    }
+
+    static void CalcularIdade()
+    {
+        Console.Write("Digite o ano de nascimento: ");
+        int anoNascimento = int.Parse(Console.ReadLine());
+
+        int idade = DateTime.Now.Year - anoNascimento;
+
+        Console.WriteLine("Idade: " + idade + " anos");
+    }
+
+    static void CalcularDiasParaNatal()
+    {
+        DateTime natal = new DateTime(DateTime.Now.Year, 12, 25);
+        TimeSpan diasParaNatal = natal - DateTime.Now;
+
+        Console.WriteLine("Faltam " + diasParaNatal.Days + " dias para o Natal!");
+    }
+}

@@ -1,0 +1,86 @@
+using System;
+class Exercicio3
+
+{
+    static string Par(double Soma, double Media, double[] array, double Contador)
+    {
+        array = new double[6];
+        for (int i = 0; i < 6; i++)
+        {
+            Console.Write("\nDigite um Número: ");
+            array[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            if (array[i] % 2 == 0)
+            {
+                Contador++;
+                Soma = Soma + array[i];
+            }
+        }
+        Media = Soma / Contador;
+        return $"\nA soma {Soma} e a média é {Media}, e a quantidade é igual a {Contador}";
+    }
+
+    static string Impar(double Soma, double Media, double[] array, double Contador)
+    {
+        array = new double[6];
+        for (int i = 0; i < 6; i++)
+        {
+            Console.Write("\nDigite um número: ");
+            array[i] = Convert.ToDouble(Console.ReadLine());
+        }
+        for (int i = 0; i < 6; i++) 
+        {
+            if (array[i] % 2 != 0)
+            {
+                Contador++; 
+                Soma = Soma + array[i];
+            }
+        }
+        Media = Soma / Contador;
+        return $"\nA soma é {Soma}, a média é {Media}, e a quantidade é igual à {Contador}";
+    }
+    static void Menu()
+    {
+        Console.WriteLine("\n          Digite uma opção:              ");
+        Console.WriteLine(" _____________");
+        Console.WriteLine("|  1 - Operações com valores pares      |");
+        Console.WriteLine("|  2 - Operações com valores ímpares    |");  
+        Console.WriteLine("|  3 - Sair do programa                 |");
+        Console.WriteLine("|_____________|");
+    }
+
+    static void Main()
+    {
+        double[] array = new double[6];
+        double Soma = 0;
+        double Media = 0;
+        double Contador = 0;
+
+        while (true)
+        {
+            Menu();
+
+            Console.Write("\n opção: ");
+            double opcao = Convert.ToDouble(Console.ReadLine());
+
+
+            switch (opcao)
+            {
+                case 1:
+                    Console.WriteLine(Par(Soma, Media, array, Contador));
+                    break;
+                case 2:
+                    Console.WriteLine(Impar(Soma, Media, array, Contador));
+                    break;
+                case 3:
+                    goto FimdoPrograma;
+                default: 
+                    Console.WriteLine("\nOpção inválida");
+                    break;
+            }
+        }
+                FimdoPrograma:;
+    }
+}

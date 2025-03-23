@@ -1,6 +1,6 @@
 # Eai! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
-## Me chamo Tiago, estou começando a aprender sobre programação e afins, estou cursando meu segundo ano do ensino médio :P
+## Me chamo Tiago, estou começando a aprender sobre programação e afins, estou cursando meu terceiro ano do ensino médio :P
 
 
 ## Techs que pretendo aprender
